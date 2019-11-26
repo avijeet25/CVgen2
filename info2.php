@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CVgen</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style> 
+    h5,h3,tr.high {
+            font-family: Cambria;
+            color: goldenrod;
+        }
+    tr.high {
+            font-family: Cambria;
+            color: silver;
+        }
+    
+        </style>
+</head>
+
+<body style ="background-image: url('background.png');">
+    <img src='mypic2.jpeg' alt='Profile picture' width="15%" align="right" hspace = "35px" vspace = "65px" style = "border:4px solid white">
+</body>
+    
+
+</html>
+
+<?php
+
+		
+//$name=$address=$address2=$address3=$phoneno=$email=$career_objective=$ayear1=$ayear2=$board1=$board2=$col1=$col2=$per1=$per2=$tr_pr=$cs_sk_lang=$cs_sk_other=$dob=$Fname1=$Mname1=$Category=$Genger=$Nationality=$ht=$PAddress=$Languages="";
+		
+		   
+			$name=test_input($_POST['name']);
+			$address1=test_input($_POST['address1']);
+			$address2=test_input($_POST['address2']);
+			$address3=test_input($_POST['address3']);
+			$phoneno=test_input($_POST['phoneno']);
+			$email=test_input($_POST['email']);
+			$career_objective=test_input($_POST['career_objective']);
+			$ayear1=test_input($_POST['ayear1']);
+			$ayear2=test_input($_POST['ayear2']);
+			$board1=test_input($_POST['board1']);
+			$board2=test_input($_POST['board2']);
+			$col1=test_input($_POST['col1']);
+			$col2=test_input($_POST['col2']);
+			$per1=test_input($_POST['per1']);
+			$tr_pr=test_input($_POST['tr_pr']);
+			$per2=test_input($_POST['per2']);
+			$cs_sk_lang=test_input($_POST['cs_sk_lang']);
+			$cs_sk_other=test_input($_POST['cs_sk_other']);
+			$dob=test_input($_POST['dob']);
+			$Fname1=test_input($_POST['Fname1']);
+			$Mname1=test_input($_POST['Mname1']);
+			$Category=test_input($_POST['Category']);
+			$Gender=test_input($_POST['Gender']);
+			$Nationality=test_input($_POST['Nationality']);
+			$ht=test_input($_POST['ht']);
+			$PAddress=test_input($_POST['PAddress']);
+			$LANGUAGES=test_input($_POST['Languages']);
+		     
+         function test_input($data) {
+            $data = trim($data);
+            $data = stripslashes($data);
+            $data = htmlspecialchars($data);
+			
+            return $data;
+         }
+
+        $x= fopen("Cvgen.txt",'w+');
+        fwrite($x,$name);fwrite($x,":");
+        fwrite($x,$address1);fwrite($x,":");
+        fwrite($x,$address2);fwrite($x,":");
+        fwrite($x,$address3);fwrite($x,":");
+        fwrite($x,$phoneno);fwrite($x,":");
+        fwrite($x,$email);fwrite($x,":");
+        fwrite($x,$career_objective);fwrite($x,":");
+        fwrite($x,$ayear1);fwrite($x,":");
+        fwrite($x,$ayear2);fwrite($x,":");
+        fwrite($x,$board1);fwrite($x,":");
+        fwrite($x,$board2);fwrite($x,":");
+        fwrite($x,$col1);fwrite($x,":");
+        fwrite($x,$col2);fwrite($x,":");
+        fwrite($x,$per1);fwrite($x,":");
+        fwrite($x,$tr_pr);fwrite($x,":");
+        fwrite($x,$per2);fwrite($x,":");
+        fwrite($x,$cs_sk_lang);fwrite($x,":");
+        fwrite($x,$cs_sk_lang);fwrite($x,":");
+        fwrite($x,$dob);fwrite($x,":");
+        fwrite($x,$Fname1);fwrite($x,":");
+        fwrite($x,$Mname1);fwrite($x,":");
+        fwrite($x,$Category);fwrite($x,":");
+        fwrite($x,$Gender);fwrite($x,":");
+        fwrite($x,$Nationality);fwrite($x,":");
+        fwrite($x,$ht);fwrite($x,":");
+        fwrite($x,$PAddress);fwrite($x,":");
+        fwrite($x,$LANGUAGES);fwrite($x,":");
+        fclose($x);
+        
+        
+        
+		
+		
+		echo"<h1 style = 'font-size:60px; font-family: Abyssinica SIL , sans-serif;color:gold;'>$name</h1>";
+		
+		
+		echo"<button class = 'btn btn-secondary'><b>Address of Correspondence</b></button>";
+		echo"<h5 class = 'high'>$address1</h5>";
+		echo"<h5 class = 'high'>$address2</h5>";
+		echo"<h5 class = 'high'>$address3</h5>";
+		echo"<br>";
+		
+		echo"<h3 class='high'><b><button class = 'btn btn-primary' btn-lg disabled>Phone Number : </button></b>$phoneno</h3>";
+		echo"<h3 class='high'><b><button class = 'btn btn-primary' btn-lg disabled>Email: </button></b>$email</h3>";
+			echo"<br>";
+					echo"<br>";
+						
+		echo"<h2 class='high'><button class = 'btn btn-secondary'>CAREER OBJECTIVE</button></h2>";
+		echo"<h3 class='high'><i>$career_objective</i></h3>";
+		echo"<br>";
+		echo"<h2 class='high'><button class = 'btn btn-secondary'>ACADEMIC BACKGROUND</button></h2>";
+
+		echo"<table>
+			
+			<tr class = 'high'>		<th>Year(s)</th>		<th>Qualification</th>			<th>Board/University</th>		<th>College/Institue/University</th>		<th>Percentage/CGPA</th>		</tr>
+			<tr class = 'high'>		<td>$ayear1</td>		<td>10th</td>			<td>$board1</td>		<td>$col1</td>		<td>$per1</td>		</tr>
+			<tr class = 'high'>		<td>$ayear2</td>		<td>12th</td>			<td>$board2</td>		<td>$col2</td>		<td>$per2</td>		</tr>
+			
+		</table>";		
+        echo "<br>";echo "<br>";
+				
+			echo"<h2 class='high'><b><button class = 'btn btn-secondary' btn-lg> TRAINING & PROJECTS UNDERTAKEN</h2>";
+			/*<ul>
+				<li>CLOUD WORKSHOP AND TRAINING PROGRAM BY MICROSOFT TECHNICAL COMUNITY</li>
+				<li>LINKEDIN AND CV BUILDING WORKSHOP</li>
+				<li>MICROSOFT AZURE WORKSHOP CONDUCTED BY MICROSOFT TECHNICAL COMUNITY</li>
+				<li>GITHUB WORKSHOP BY CODING NINJA'S</li>
+			</ul>*/
+			echo"<h3 class = 'high'>$tr_pr</h3>";
+			echo"<br>";
+		echo"<h2 class = 'high'><button class = 'btn btn-secondary'>COMPUTER SKILLS</button></h2>";
+		
+		echo"<h3 class='high'><b><button class = 'btn btn-primary' btn-lg disabled><b>LANGUAGES : </button> &nbsp $cs_sk_lang<b> </h3>";
+			echo"<h3 class='high'><b><button class = 'btn btn-primary' btn-lg disabled>OTHERS   : </button> &nbsp  &nbsp  &nbsp $cs_sk_other.<b></h3> ";
+			echo"<br>";
+				echo"<h2 class = 'high'><button class = 'btn btn-secondary'>PERSONAL DETAILS</button></h2>";
+				echo"<table style = 'font-size:18px;'>
+					<tr class = 'high'>		<td>Date Of Birth</td>		<td>:</td>		<td><b>$dob</b></td>		</tr>
+					<tr class = 'high'>		<td>Father's Name</td>		<td>:</td>		<td><b>$Fname1</b></td>		</tr>
+					<tr class = 'high'>		<td>Mother's Name</td>		<td>:</td>		<td><b>$Mname1</b></td>		</tr>
+					<tr class = 'high'>		<td>Category</td>		<td>:</td>			<td><b>$Category</b></td>		</tr>
+					<tr class = 'high'>		<td>Gender</td>		<td>:</td>		<td><b>$Gender</b></td>		</tr>
+					<tr class = 'high'>		<td>Nationality</td>		<td>:</td>		<td><b>$Nationality</b></td>		</tr>
+					<tr class = 'high'>		<td>Home Town</td>		<td>:</td>		<td><b>$ht</b></td>		</tr>
+					<tr class = 'high'>		<td>Permanent Address</td>		<td>:</td>		<td><b>$PAddress</b></td>		</tr>
+					<tr class = 'high'>		<td>Phone No.</td>		<td>:</td>		<td><b>$phoneno</b></td>		</tr>
+					<tr class = 'high'>		<td>Languages Known</td>		<td>:</td>		<td><b>$LANGUAGES</b></td>		</tr>";
+
+		
+	?>				
+	
